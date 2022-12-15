@@ -10,7 +10,6 @@ public class SlopeMove2D : MonoBehaviour
     [SerializeField] private float _moveSpeed = 1f;
     [Range(1f, 10f)]
     [SerializeField] private float _jumpPower = 1f;
-    [SerializeField] private Transform _target;
 
     void Update()
     {
@@ -21,5 +20,10 @@ public class SlopeMove2D : MonoBehaviour
         pos.x += 0.01f * hol;
 
         trans.position = pos;
+
+        if (Physics.Raycast(pos, Vector3.down, 1))
+        {
+
+        }
     }
 }
